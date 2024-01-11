@@ -2,10 +2,10 @@ name: Run tests for OTUS homework
 
 on:
   push:
-    branches-ignore: 
+    branches-ignore:
     - main
   pull_request:
-    branches-ignore: 
+    branches-ignore:
     - main
 
 jobs:
