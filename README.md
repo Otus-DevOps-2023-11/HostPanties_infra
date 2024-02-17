@@ -30,3 +30,4 @@ yc compute instance create \
 --metadata-from-file user-data=C:\Users\saushkinsa\Documents\VSCODE\HOMEWORK\HostPanties_infra\cloud-testapp\cloud-testapp.yaml \
 --metadata serial-port-enable=1
 ```
+
