@@ -14,3 +14,15 @@ Host internalhost
 ## pritunl config explanation
 bastion_IP = 84.201.133.98
 someinternalhost_IP = 10.128.0.32
+
+# Homework cloud-testapp
+## startup-script
+```yc compute instance create \
+--name reddit-app-cl-init \
+--hostname reddit-app02 \
+--memory 4 \
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-2004-lts,size=10GB \
+--network-interface subnet-name=default-ru-central1-b,nat-ip-version=ipv4 \
+--metadata-from-file user-data=C:\Users\saushkinsa\Documents\VSCODE\HOMEWORK\HostPanties_infra\cloud-testapp\cloud-testapp.yaml \
+--metadata serial-port-enable=1
+```
