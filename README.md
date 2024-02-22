@@ -16,8 +16,12 @@ bastion_IP = 84.201.133.98
 someinternalhost_IP = 10.128.0.32
 
 # Homework cloud-testapp
+## testapp config explanation
+testapp_IP = 158.160.8.47
+testapp_port = 9292
 ## startup-script
-```yc compute instance create \
+```
+yc compute instance create \
 --name reddit-app-cl-init \
 --hostname reddit-app02 \
 --memory 4 \
