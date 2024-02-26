@@ -12,5 +12,5 @@ Host internalhost
     ProxyJump user@bastion-ip
 ```
 ## pritunl config explanation
-bastion_IP = 84.201.133.98
-someinternalhost_IP = 10.128.0.32
+bastion_IP = 178.154.203.121
+someinternalhost_IP = 10.128.0.10
