@@ -1,0 +1,46 @@
+#cloud-config
+system_info:
+  default_user:
+    name: appuser
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDEAa62lx4CmYFI3zsg4tSqb7GPXTJU2OusOt8YETMZd eddsa-key-yc
+
+write_files:
+  - encoding: text/plain
+    content: |
+      #!/bin/sh
+      sudo apt update
+      sudo apt install -y ruby-full ruby-bundler build-essential
+    path: /home/appuser/scripts/install_ruby.sh
+    permissions: '0755'
+
+  - encoding: text/plain
+    content: |
+      #!/bin/sh
+      sudo apt update
+      sudo apt install mongodb -y
+      systemctl enable --now mongodb
+    path: /home/appuser/scripts/install_mongodb.sh
+    permissions: '0755'
+
+  - encoding: text/plain
+    content: |
+      #!/bin/sh
+      sudo apt install git -y
+      git clone -b monolith https://github.com/express42/reddit.git
+      cd reddit
+      bundle install
+      # Workaround cuz I cant get 'puma -d' to work
+      # though 'puma --help' does not have option '-d' too
+      setsid puma > puma.log 2>&1 < puma.log &
+    path: /home/appuser/scripts/deploy.sh
+    permissions: '0755'
+
+runcmd:
+  - chown -R appuser:appuser /home/appuser
+  - chmod -R 755 /home/appuser{/,/scripts}
+  - cd /home/appuser
+  - su -c /home/appuser/scripts/install_ruby.sh appuser
+  - su -c /home/appuser/scripts/install_mongodb.sh appuser
+  - su -c /home/appuser/scripts/deploy.sh appuser
