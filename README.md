@@ -17,7 +17,7 @@ someinternalhost_IP = 10.128.0.32
 
 # Homework cloud-testapp
 ## testapp config explanation
-testapp_IP = http://158.160.16.218
+testapp_IP = 158.160.16.218
 testapp_port = 9292
 ## startup-script
 ```
