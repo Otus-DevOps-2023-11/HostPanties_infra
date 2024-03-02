@@ -30,8 +30,6 @@ write_files:
       sudo apt install git -y
       git clone -b monolith https://github.com/express42/reddit.git
       cd reddit
-      bundle update --bundler
-      bundle update
       bundle install
       # Workaround cuz I cant get 'puma -d' to work
       # though 'puma --help' does not have option '-d' too
