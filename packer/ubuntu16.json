@@ -1,0 +1,29 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+	    "source_image_family": "ubuntu-1604-lts",
+	    "image_name": "reddit-base-{{ timestamp }}",
+	    "use_ipv4_nat": true,
+	    "image_family": "reddit-base",
+	    "ssh_username": "ubuntu",
+	    "platform_id": "standard-v1",
+	    "instance_cores": "1",
+	    "instance_mem_gb": "1"
+        }
+    ],
+    "provisioners": [
+	{
+	    "type": "shell",
+	    "scripts": "scripts/install_ruby.sh",
+	    "execute_command": "sudo {{.Path}}"
+	},
+	{
+	    "type": "shell",
+	    "scripts": "scripts/install_mongodb.sh",
+	    "execute_command": "sudo {{.Path}}"
+	}
+    ]
+     
+}
+
