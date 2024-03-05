@@ -4,6 +4,7 @@
             "type": "yandex",
 	    "source_image_family": "ubuntu-1604-lts",
 	    "image_name": "reddit-base-{{ timestamp }}",
+	    "folder_id": "${var._folder_id}",
 	    "use_ipv4_nat": true,
 	    "image_family": "reddit-base",
 	    "ssh_username": "ubuntu",
