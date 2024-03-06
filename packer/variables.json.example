@@ -1,5 +1,5 @@
 {
 	"_folder_id": "foo",
 	"source_image_id": "bar",
-	"_key": "/foo/bar/key.json"
+	"service_account_key_file": "/foo/bar/key.json"
 }
