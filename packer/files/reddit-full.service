@@ -1,0 +1,16 @@
+[Unit]
+Description = Service for reddit-full monolith app
+After = network.target
+
+[Service]
+Type = notify
+User = reddit
+Group = reddit
+WatchdogSec = 10
+WorkingDirectory = /opt/reddit
+ExecStart = /usr/local/bin/puma 
+Restart = Always
+
+[Install]
+WantedBy = multi-user.target
+
