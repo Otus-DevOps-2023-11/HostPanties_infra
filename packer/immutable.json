@@ -1,0 +1,40 @@
+{
+  "variables": {
+    "_folder_id": "",
+    "_key": ""
+  },
+
+  "builders": [
+    {
+      "type": "yandex",
+      "source_image_family": "reddit-base",
+      "image_name": "reddit-full-{{ timestamp }}",
+      "folder_id": "{{user `_folder_id`}}",
+      "service_account_key_file": "{{user `_key`}}",
+      "source_image_id": "fd88b7pbagov3l9sg8mh",
+      "use_ipv4_nat": "true",
+      "image_family": "reddit-base",
+      "ssh_username": "ubuntu",
+      "platform_id": "standard-v1",
+      "instance_cores": "2",
+      "instance_mem_gb": "2"
+    }
+  ],
+  "provisioners": [
+  {
+    "type": "file",
+    "source": "files/reddit-full.service",
+    "destination": "~/reddit-full.service"
+  },
+  {
+    "type": "shell",
+    "inline": ["sleep 5", "sudo apt install -y git"],
+    "max_retries": "15"
+  },
+  {
+    "type": "shell",
+    "script": "scripts/deploy.sh",
+    "execute_command": "sudo {{ .Path }}"
+  }
+  ]
+}
