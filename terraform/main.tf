@@ -8,27 +8,52 @@ terraform {
 }
 
 provider "yandex" {
-  token     = "y0_AgAAAAB0OuFmAATuwQAAAAD7dxLKAACIusC6FVxI6Kky26ubualyP2rdPw"
-  cloud_id  = "b1g2a34319jmp1basb38"
-  folder_id = "b1gu9td5uk8ohab1ecp8"
-  zone      = "ru-central1-b"
+  service_account_key_file = file(var.service_account_key_file)
+  cloud_id                 = var.cloud_id
+  folder_id                = var.folder_id
+  zone                     = var.zone
 }
 
 resource "yandex_compute_instance" "app" {
-  name = "reddit-app"
-  
+  count = 2  
+
+  name = "reddit-app-${count.index + 1}"
+
+  connection {
+    type        = "ssh"
+    host        = self.network_interface.0.nat_ip_address
+    user        = "ubuntu"
+    agent       = false
+    private_key = file(var.private_key_path)
+  }
+
   resources {
-    core   = "2"
+    cores  = "2"
     memory = "2"
   }
+
   boot_disk {
     initialize_params {
-      image_id = "fd88b7pbagov3l9sg8mh"
+      image_id = var.image_id
     }
   }
-  network-interface {
-    subnet_id = "enpfmrrs6tdubo6sqf25"
+
+  network_interface {
+    subnet_id = var.subnet_id
     nat       = true
   }
+
+  metadata = {
+    ssh-keys = "ubuntu:${file(var.public_key_path)}"
+  }
+
+  provisioner "file" {
+    source      = "files/puma.service"
+    destination = "/tmp/puma.service"
+  }
+  provisioner "remote-exec" {
+    script = "files/deploy.sh"
+  }
+
 }
 
