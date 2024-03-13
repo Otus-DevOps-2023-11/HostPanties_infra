@@ -1,0 +1,8 @@
+cloud_id                 = "000"
+folder_id                = "001"
+zone                     = "002"
+image_id                 = "003"
+public_key_path          = "~/.ssh/id_rsa.pub"
+subnet_id                = "004"
+service_account_key_file = "key.json"
+
