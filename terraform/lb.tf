@@ -23,7 +23,6 @@ resource "yandex_lb_target_group" "app-lb-tg" {
 resource "yandex_lb_network_load_balancer" "app-lb" {
 
   name = "app-lb-01"
-  deletion_protection = false
   listener {
     name = "app-lb-01-9292"
     port = 9292
