@@ -30,3 +30,10 @@ yc compute instance create \
 --metadata-from-file user-data=C:\Users\saushkinsa\Documents\VSCODE\HOMEWORK\HostPanties_infra\cloud-testapp\cloud-testapp.yaml \
 --metadata serial-port-enable=1
 ```
+
+# Homework terraform-1
+## load-balancer manual config potential problems
+- Масштабируемость
+- Скорость масштабируемости
+- Человеческий фактор при добавлении новых инстансов
+
