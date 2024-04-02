@@ -29,7 +29,7 @@
 	{
 	    "type": "shell",
 	    "script": "scripts/install_ruby.sh",
-	    "execute_command": "sudo {{.Path}}",
+	    "execute_command": "sudo {{.Path}}"
 	}
   ]
 }
