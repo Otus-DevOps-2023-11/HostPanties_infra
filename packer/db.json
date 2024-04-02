@@ -29,8 +29,7 @@
 	{
 	    "type": "shell",
 	    "script": "scripts/install_mongodb.sh",
-	    "execute_command": "sudo {{.Path}}",
-      "max_retries": "10"
+	    "execute_command": "sudo {{.Path}}"
 	}
   ]
 }

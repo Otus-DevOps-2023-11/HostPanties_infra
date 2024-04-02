@@ -28,8 +28,7 @@
   },
   {
     "type": "shell",
-    "inline": ["sleep 5", "sudo apt install -y git"],
-    "max_retries": "15"
+    "inline": ["sleep 5", "sudo apt install -y git"]
   },
   {
     "type": "shell",
