@@ -31,3 +31,25 @@ variable "private_key_path" {
   description = "Private key path"
 }
 
+variable "app_disk_image" {
+  description = "Reddit app baked disk image name"
+  default = "reddit-app-1"
+}
+
+variable "db_disk_image" {
+  description = "Reddit DB baked disk image name"
+  default = "reddit-db-1"
+}
+
+variable access_key {
+  type = string
+}
+
+variable secret_key {
+  type = string
+}
+
+variable pub-key {
+  type = string
+}
+
