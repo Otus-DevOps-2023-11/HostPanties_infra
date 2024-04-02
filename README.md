@@ -53,3 +53,8 @@ yc compute instance create \
     - изменение параметра bind_ip на внешний адрес
     - перезапуск сервиса mongodb
 
+# Homework ansible-1
+## rm -rf on ~/reddit /w ansible
+- С помощью команды ```ansible app -m command -a 'rm -rf ~/reddit'``` мы удалили директорию reddit в которой находится репозиторий
+- При следующем запуске плейбука на клонирование репозитория reddit ansible увидил отсутствие репозитория и скачал его
+
