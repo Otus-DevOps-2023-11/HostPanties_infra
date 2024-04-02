@@ -1,0 +1,37 @@
+{
+  "variables": {
+    "_folder_id": "",
+    "_key": "",
+    "_source_image_id": "",
+    "_subnet_id": "",
+    "_zone": ""
+  },
+
+  "builders": [
+    {
+      "type": "yandex",
+	    "source_image_family": "ubuntu-1604-lts",
+      "source_image_id": "{{ user `_source_image_id` }}",
+      "service_account_key_file": "{{ user `_key` }}",
+	    "folder_id": "{{ user `_folder_id` }}",
+	    "image_name": "reddit-app-{{ timestamp }}",
+      "subnet_id": "{{ user `_subnet_id` }}",
+      "zone": "{{ user `_zone` }}",
+	    "use_ipv4_nat": true,
+	    "image_family": "reddit-base",
+	    "ssh_username": "ubuntu",
+	    "platform_id": "standard-v1",
+	    "instance_cores": "2",
+	    "instance_mem_gb": "2"
+    }
+  ],
+    "provisioners": [
+	{
+	    "type": "shell",
+	    "script": "scripts/install_ruby.sh",
+	    "execute_command": "sudo {{.Path}}",
+      "max_retries": "10"
+	}
+  ]
+}
+
