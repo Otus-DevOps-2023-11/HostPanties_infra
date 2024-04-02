@@ -21,6 +21,8 @@ module "app" {
   public_key_path = var.public_key_path
   app_disk_image  = var.app_disk_image
   subnet_id       = var.subnet_id
+  puma-service-file = "../files/puma.service"
+  deploy-file     = "../files/deploy.sh"
 }
 
 module "db" {

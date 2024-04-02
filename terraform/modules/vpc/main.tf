@@ -9,3 +9,4 @@ resource "yandex_vpc_subnet" "app-subnet" {
   v4_cidr_blocks = ["192.168.10.0/24"]
 }
 
+

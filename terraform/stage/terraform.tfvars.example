@@ -1,0 +1,13 @@
+cloud_id                  = "1"
+folder_id                 = "2"
+zone                      = "3"
+image_id                  = "4"
+public_key_path           = "5"
+subnet_id                 = "6"
+service_account_key_file  = "7"
+private_key_path          = "8"
+app_disk_image            = "9"
+db_disk_image             = "10"
+access_key                = "11"
+secret_key                = "12"
+
