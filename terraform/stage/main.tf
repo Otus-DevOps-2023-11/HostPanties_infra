@@ -14,6 +14,7 @@ module "app" {
   db_ext_ip       = module.db.external_ip_address_db
   puma-service-file = "../files/puma.service"
   deploy-file     = "../files/deploy.sh"
+  pub-key         = var.pub-key
 }
 
 module "db" {
@@ -22,4 +23,5 @@ module "db" {
   public_key_path = var.public_key_path
   db_disk_image   = var.db_disk_image
   subnet_id       = var.subnet_id
+  pub-key         = var.pub-key
 }

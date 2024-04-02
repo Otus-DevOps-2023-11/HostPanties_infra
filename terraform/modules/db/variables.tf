@@ -14,3 +14,8 @@ variable subnet_id {
 variable name {
   type = string
 }
+
+variable pub-key {
+  type = string
+}
+

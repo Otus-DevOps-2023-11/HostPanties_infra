@@ -24,7 +24,7 @@ resource "yandex_compute_instance" "reddit-app" {
     host = yandex_compute_instance.reddit-app.network_interface.0.nat_ip_address
     type = "ssh"
     user = "ubuntu"
-    private_key = file("/home/administrator/.ssh/id_rsa")
+    private_key = file(var.pub-key)
   }
   provisioner "file" {
     source = var.puma-service-file

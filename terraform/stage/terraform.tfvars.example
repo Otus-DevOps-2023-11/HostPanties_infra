@@ -10,4 +10,5 @@ app_disk_image            = "9"
 db_disk_image             = "10"
 access_key                = "11"
 secret_key                = "12"
+pub-key                   = "../files/empty-key"
 

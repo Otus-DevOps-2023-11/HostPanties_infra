@@ -26,3 +26,8 @@ variable puma-service-file {
 variable deploy-file {
   type = string
 }
+
+variable pub-key {
+  type = string
+}
+

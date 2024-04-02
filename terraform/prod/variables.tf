@@ -49,3 +49,7 @@ variable secret_key {
   type = string
 }
 
+variable pub-key {
+  type = string
+}
+

@@ -23,7 +23,7 @@ resource "yandex_compute_instance" "db" {
     host = self.network_interface.0.nat_ip_address
     type = "ssh" 
     user = "ubuntu"
-    private_key = file("/home/administrator/.ssh/id_rsa")
+    private_key = file(var.pub-key)
   }
   provisioner "remote-exec" {
     inline = ["sleep 180",
