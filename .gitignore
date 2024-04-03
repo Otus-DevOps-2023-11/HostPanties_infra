@@ -5,3 +5,4 @@ packer/variables.json
 *.tfvars
 .terraform/
 provider.tf
+*__pycache__*
