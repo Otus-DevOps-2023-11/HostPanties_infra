@@ -57,4 +57,5 @@ yc compute instance create \
 ## rm -rf on ~/reddit /w ansible
 - С помощью команды ```ansible app -m command -a 'rm -rf ~/reddit'``` мы удалили директорию reddit в которой находится репозиторий
 - При следующем запуске плейбука на клонирование репозитория reddit ansible увидил отсутствие репозитория и скачал его
-
+## static vs dynamic inventory
+- В динамичном json инвентори необходимо указывать специальный раздел ```_meta :{"hostvars": {...}}```
