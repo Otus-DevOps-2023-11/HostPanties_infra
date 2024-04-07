@@ -6,3 +6,4 @@ packer/variables.json
 .terraform/
 provider.tf
 *__pycache__*
+*.retry

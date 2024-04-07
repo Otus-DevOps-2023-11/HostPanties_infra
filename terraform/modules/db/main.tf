@@ -19,15 +19,15 @@ resource "yandex_compute_instance" "db" {
   metadata = {
     ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
-  connection {
-    host = self.network_interface.0.nat_ip_address
-    type = "ssh" 
-    user = "ubuntu"
-    private_key = file(var.pub-key)
-  }
-  provisioner "remote-exec" {
-    inline = ["sleep 180",
-      "sudo sed -i 's/bind_ip = 127.0.0.1/bind_ip = 0.0.0.0/g' /etc/mongodb.conf",
-    "sudo systemctl restart mongodb"]
-  }
+  #  connection {
+  #    host = self.network_interface.0.nat_ip_address
+  #    type = "ssh" 
+  #    user = "ubuntu"
+  #    private_key = file(var.pub-key)
+  #  }
+  #  provisioner "remote-exec" {
+  #    inline = ["sleep 180",
+  #      "sudo sed -i 's/bind_ip = 127.0.0.1/bind_ip = 0.0.0.0/g' /etc/mongodb.conf",
+  #    "sudo systemctl restart mongodb"]
+  #  }
 }

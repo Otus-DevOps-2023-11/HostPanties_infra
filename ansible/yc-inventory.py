@@ -17,13 +17,17 @@ inv = {"_meta": {"hostvars":{}},
         "db":    {"hosts": []}
         }
 vms = get_vms()
+dbs = []
 for vm in vms['instances']:
 #        print(vm)
     if vm['labels']['tags'] == "reddit-app":
-         inv['app']['hosts'].append(vm['networkInterfaces'][0]['primaryV4Address']['oneToOneNat']['address'])
-
+        app = vm['networkInterfaces'][0]['primaryV4Address']['oneToOneNat']['address']
+        inv['app']['hosts'].append(app)
     if vm['labels']['tags'] == "reddit-db":
-         inv['db']['hosts'].append(vm['networkInterfaces'][0]['primaryV4Address']['oneToOneNat']['address'])
+        db = vm['networkInterfaces'][0]['primaryV4Address']['oneToOneNat']['address']
+        inv['db']['hosts'].append(db)
+        dbs.append(vm['networkInterfaces'][0]['primaryV4Address']['address'])
 
+inv['app']['vars'] = {'dbs': dbs}
 print(json.dumps(inv))
 
