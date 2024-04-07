@@ -1,0 +1,16 @@
+---
+- name: Pre-Configure DB
+  become: yes
+  hosts: all
+  tasks:
+    - name: Install MongoDB
+      apt:
+        name: mongodb
+        state: present
+
+    - name: Enable && Start MongoDB service 
+      systemd:
+        name: mongodb 
+        state: started
+        enabled: yes
+   

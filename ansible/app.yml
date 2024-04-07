@@ -1,0 +1,35 @@
+---
+- name: Configure App
+  hosts: app
+  become: true
+  vars: 
+    db_host: "{{ hostvars[inventory_hostname]['dbs'][0] }}" 
+  tasks:
+  - name: App install deps
+    apt:
+      name: git
+      state: present
+
+  - name: Add unit file for puma
+    copy:
+      src: files/puma.service
+      dest: /etc/systemd/system/puma.service
+    notify: reload puma
+
+  - name: Deploy db_config env file from template
+    template:
+      src: templates/db_config.j2
+      dest: /home/ubuntu/db_config
+    notify: reload puma
+
+  - name: Enable puma service
+    systemd: 
+      name: puma 
+      enabled: yes
+
+  handlers:
+  - name: reload puma
+    systemd:
+      daemon_reload: yes
+      name: puma 
+      state: restarted
