@@ -2,6 +2,7 @@ resource "yandex_compute_instance" "reddit-app" {
   name = var.name
   labels = {
     tags = "reddit-app"
+    env = var.env
   }
   resources {
     cores = 2

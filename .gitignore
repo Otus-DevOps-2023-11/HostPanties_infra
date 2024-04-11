@@ -7,3 +7,5 @@ packer/variables.json
 provider.tf
 *__pycache__*
 *.retry
+jdauphant.nginx
+vault.key
