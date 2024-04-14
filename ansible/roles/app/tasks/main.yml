@@ -18,7 +18,7 @@
   notify: reload puma
 
 - name: Enable puma service
-  systemd: 
-    name: puma 
+  systemd:
+    name: puma
     enabled: yes
 

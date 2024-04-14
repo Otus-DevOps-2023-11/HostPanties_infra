@@ -14,10 +14,10 @@
     bundler:
       state: present
       chdir: '/home/ubuntu/reddit'
-  
+
   handlers:
   - name: reload puma
     systemd:
       daemon_reload: yes
-      name: puma 
+      name: puma
       state: restarted
