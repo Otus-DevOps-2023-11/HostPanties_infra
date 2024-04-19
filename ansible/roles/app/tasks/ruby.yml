@@ -7,9 +7,3 @@
       - ruby-bundler
       - build-essential
     state: present
-
-- name: Update Bundler version
-  shell:
-    executable: /bin/bash
-    cmd: gem install bundler -v '~> 1.16.1'
-  ignore_errors: true
