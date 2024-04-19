@@ -1,7 +1,7 @@
 ---
 - name: App install deps
   apt:
-    name: 
+    name:
       - git
       - ruby-full
       - ruby-bundler

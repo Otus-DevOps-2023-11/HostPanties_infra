@@ -9,9 +9,9 @@
     state: present
   tags: install
 
-- name: Enable && Start MongoDB service 
+- name: Enable && Start MongoDB service
   systemd:
-    name: mongodb 
+    name: mongodb
     state: started
     enabled: yes
   tags: install

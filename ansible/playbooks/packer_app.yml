@@ -1,14 +1,13 @@
 ---
-- name: Pre-Configure App 
+- name: Pre-Configure App
   become: true
   hosts: all
   tasks:
   - name: App install deps
     apt:
-      name: 
+      name:
         - git
         - ruby-full
         - ruby-bundler
         - build-essential
       state: present
-

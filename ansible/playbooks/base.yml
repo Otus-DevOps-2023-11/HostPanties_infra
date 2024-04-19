@@ -8,4 +8,3 @@
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt update && apt install -y python-minimal)
       changed_when: False
-    

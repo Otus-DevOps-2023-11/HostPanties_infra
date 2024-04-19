@@ -1,4 +1,4 @@
-import time 
+import time
 import jwt
 import json
 import requests
@@ -29,4 +29,3 @@ def get_token():
 
 if __name__ == '__main__':
     get_token()
-    

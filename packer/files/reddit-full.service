@@ -8,9 +8,8 @@ User = reddit
 Group = reddit
 WatchdogSec = 10
 WorkingDirectory = /opt/reddit
-ExecStart = /usr/local/bin/puma 
+ExecStart = /usr/local/bin/puma
 Restart = Always
 
 [Install]
 WantedBy = multi-user.target
-

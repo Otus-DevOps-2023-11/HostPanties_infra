@@ -22,4 +22,3 @@
   systemd:
     name: puma
     enabled: yes
-

@@ -68,4 +68,3 @@ yc compute instance create \
   - Несколько плейбуков
 
 - Реализовано создание образов packer'a с помощью ansible плагина
-
