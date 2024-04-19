@@ -31,3 +31,7 @@ variable pub-key {
   type = string
 }
 
+variable env {
+  description = "Environment of vm i.e. prod or stage"
+  type = string
+}

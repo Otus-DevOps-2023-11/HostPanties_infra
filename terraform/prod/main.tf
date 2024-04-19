@@ -15,6 +15,7 @@ module "app" {
   puma-service-file = "../files/puma.service"
   deploy-file     = "../files/deploy.sh"
   pub-key         = var.pub-key
+  env             = "prod"
 }
 
 module "db" {
@@ -24,4 +25,5 @@ module "db" {
   db_disk_image   = var.db_disk_image
   subnet_id       = var.subnet_id
   pub-key         = var.pub-key
+  env             = "prod"
 }

@@ -5,15 +5,15 @@ terraform {
     }
     bucket = "hostpanties-otus-tfstate"
     region = "ru-central1-b"
-    key = "otus/stage/terraform.tfstate"
+    key    = "otus/stage/terraform.tfstate"
 
     skip_region_validation      = true
     skip_credentials_validation = true
     skip_requesting_account_id  = true
     skip_s3_checksum            = true
-    
+
     access_key = "YCAJEK_S-y_ldauR0Ch_pgUgY"
-    secret_key = "YCOTLvCltGSV9cQoYJZfUqxH_E4-GuFxPdGU4S8-" 
+    secret_key = "YCOTLvCltGSV9cQoYJZfUqxH_E4-GuFxPdGU4S8-"
 
   }
 }
