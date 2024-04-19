@@ -68,3 +68,15 @@ yc compute instance create \
   - Несколько плейбуков
 
 - Реализовано создание образов packer'a с помощью ansible плагина
+
+# Homework ansible-3
+## Сделано:
+- Инициализированы и настроены ansible-galaxy роли db и app
+- В проект ДЗ добавлена и интегрирована сторонняя роль для nginx
+- Проведено знакомство с ansible-vault
+
+# Homework ansible-4
+## Сделано:
+- Настроены роли app и db для работы с vagrant
+- Сформировано окружение local через vagrant
+- Настроено тестовое окружение для роли db с помощью molecule и testinfra
