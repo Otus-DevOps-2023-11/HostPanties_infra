@@ -1,8 +1,7 @@
 ---
-# tasks file for db
-- name: Change mongodb config file
-  template:
-    src: mongodb.conf.j2
-    dest: /etc/mongodb.conf
-    mode: 0644
-  notify: restart mongodb
+- name: Show host info
+  debug:
+    msg: "This host is in {{ env }} environment!"
+
+- include: install_mongodb.yml
+- include: config_mongodb.yml

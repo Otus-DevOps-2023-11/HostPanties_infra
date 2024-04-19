@@ -3,8 +3,8 @@
   hosts: app
   become: true
 
-  vars:
-    db_host: "{{ hostvars[inventory_hostname]['dbs'][0] }}"
+#  vars:
+#    db_host: "{{ hostvars[inventory_hostname]['dbs'][0] }}"
 
   roles:
     - app

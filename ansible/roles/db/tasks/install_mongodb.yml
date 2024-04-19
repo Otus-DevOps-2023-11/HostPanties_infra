@@ -1,0 +1,17 @@
+---
+- name: Update Apt
+  apt:
+    update_cache: true
+- name: Install MongoDB
+  apt:
+    lock_timeout: 120
+    name: mongodb
+    state: present
+  tags: install
+
+- name: Enable && Start MongoDB service 
+  systemd:
+    name: mongodb 
+    state: started
+    enabled: yes
+  tags: install
