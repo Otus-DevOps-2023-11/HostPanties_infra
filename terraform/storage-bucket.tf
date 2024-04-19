@@ -13,7 +13,6 @@ terraform {
     skip_s3_checksum            = true
 
     access_key = "YCAJEK_S-y_ldauR0Ch_pgUgY"
-    secret_key = "YCOTLvCltGSV9cQoYJZfUqxH_E4-GuFxPdGU4S8-" 
+    secret_key = "YCOTLvCltGSV9cQoYJZfUqxH_E4-GuFxPdGU4S8-"
   }
 }
-

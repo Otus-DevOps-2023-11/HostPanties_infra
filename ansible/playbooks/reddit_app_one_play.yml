@@ -2,7 +2,7 @@
 - name: Configure host & deploy application
   hosts: all
   vars:
-    db_host: 10.129.0.3 
+    db_host: 10.129.0.3
     mongo_bind_ip: 0.0.0.0
   tasks:
   - name: Change mongodb config file
@@ -48,7 +48,7 @@
       state: present
       chdir: '/home/ubuntu/reddit'
     tags: deploy-tag
-  
+
 
   handlers:
   - name: restart mongodb

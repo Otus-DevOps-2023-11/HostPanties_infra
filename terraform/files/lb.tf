@@ -1,9 +1,9 @@
 resource "yandex_lb_target_group" "app-lb-tg" {
   name = "app-lb-tg-01"
   region_id = "ru-central1"
- 
+
   dynamic "target" {
-    for_each = yandex_compute_instance.reddit-app 
+    for_each = yandex_compute_instance.reddit-app
     content {
       subnet_id = "${var.subnet_id}"
       address = target.value.network_interface.0.ip_address
@@ -56,4 +56,3 @@ resource "yandex_lb_network_load_balancer" "app-lb" {
     }
   }
 }
-

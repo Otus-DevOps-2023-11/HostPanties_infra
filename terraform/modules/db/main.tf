@@ -22,7 +22,7 @@ resource "yandex_compute_instance" "db" {
   }
   #  connection {
   #    host = self.network_interface.0.nat_ip_address
-  #    type = "ssh" 
+  #    type = "ssh"
   #    user = "ubuntu"
   #    private_key = file(var.pub-key)
   #  }

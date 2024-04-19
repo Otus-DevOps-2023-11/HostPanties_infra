@@ -6,14 +6,14 @@
   - name: Clone latest reddit-monolith
     git:
       repo: 'https://github.com/express42/reddit.git'
-      dest: '/home/ubuntu/reddit'
+      dest: '/home/{{ deploy_user }}/reddit'
       version: 'monolith'
     notify: reload puma
 
   - name: Bundler install
     bundler:
       state: present
-      chdir: '/home/ubuntu/reddit'
+      chdir: '/home/{{ deploy_user }}/reddit'
 
   handlers:
   - name: reload puma

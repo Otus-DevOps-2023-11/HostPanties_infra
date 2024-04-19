@@ -52,4 +52,3 @@ variable "secret_key" {
 variable "pub-key" {
   type = string
 }
-

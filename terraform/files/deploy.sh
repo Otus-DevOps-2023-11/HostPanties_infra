@@ -10,4 +10,3 @@ export DATABASE_URL=$1
 bundle install &&
 sudo mv /tmp/puma.service /etc/systemd/system/puma.service &&
 sudo systemctl enable --now puma
-

@@ -22,8 +22,8 @@
   hosts: app
   tags: app-tag
   become: true
-  vars: 
-    db_host: 10.129.0.26 
+  vars:
+    db_host: 10.129.0.26
   tasks:
   - name: App install deps
     apt:
@@ -43,15 +43,15 @@
     notify: reload puma
 
   - name: Enable puma service
-    systemd: 
-      name: puma 
+    systemd:
+      name: puma
       enabled: yes
 
   handlers:
   - name: reload puma
     systemd:
       daemon_reload: yes
-      name: puma 
+      name: puma
       state: restarted
 
 
@@ -71,10 +71,10 @@
     bundler:
       state: present
       chdir: '/home/ubuntu/reddit'
-  
+
   handlers:
   - name: reload puma
     systemd:
       daemon_reload: yes
-      name: puma 
+      name: puma
       state: restarted

@@ -1,0 +1,9 @@
+---
+- name: App install deps
+  apt:
+    name:
+      - git
+      - ruby-full
+      - ruby-bundler
+      - build-essential
+    state: present

@@ -5,4 +5,3 @@
     daemon_reload: yes
     name: puma
     state: restarted
-

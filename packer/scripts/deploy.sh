@@ -16,7 +16,7 @@ echo "Chowning..."
 echo "Chmoding..."
 #chmod 640 $sys_path/reddit-full.service
 
-useradd reddit 
+useradd reddit
 
 chown reddit:reddit -R /opt/reddit
 chmod 755 /opt
@@ -26,4 +26,3 @@ systemctl daemon-reload
 echo "Starting reddit-full..."
 systemctl enable --now reddit-full
 echo "Done"
-
